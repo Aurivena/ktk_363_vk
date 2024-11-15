@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ktk_363_vk", "ktk_363_vk\ktk_363_vk.csproj", "{10CC7703-20D8-4B9D-8D7F-EA59ECF5B411}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10CC7703-20D8-4B9D-8D7F-EA59ECF5B411}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10CC7703-20D8-4B9D-8D7F-EA59ECF5B411}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10CC7703-20D8-4B9D-8D7F-EA59ECF5B411}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10CC7703-20D8-4B9D-8D7F-EA59ECF5B411}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

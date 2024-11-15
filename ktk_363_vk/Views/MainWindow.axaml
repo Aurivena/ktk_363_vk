@@ -1,0 +1,113 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:ktk_363_vk.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:m="clr-namespace:ktk_363_vk.Models"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="ktk_363_vk.Views.MainWindow"
+        x:DataType="vm:BookViewModel"
+        Background="#2b2b2b"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="ktk_363_vk">
+        
+        <Grid>
+                <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                <Grid>
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Button FontSize="20" Margin="0,0,0,20" Content="Append book" Command="{Binding ShowPopupForAppend}"/>
+                                <Button FontSize="20" Margin="0,0,0,20" Content="Remove book" Command="{Binding RemoveBook}"/>
+                                <Button FontSize="20" Content="Update info book" Command="{Binding ShowPopupForUpdate}"/>
+                        </StackPanel>
+                </Grid>
+                
+                <ListBox Grid.Column="1" ItemsSource="{Binding Books}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="2"
+                         BorderBrush="Black" SelectedItem="{Binding SelectedBook}">
+                        <ListBox.ItemTemplate>
+                                <DataTemplate x:DataType="m:Book">
+                                        <Border BorderBrush="Gray" BorderThickness="1" Margin="0,5" Padding="10">
+                                                <StackPanel>
+                                                        <TextBlock Text="{Binding Title}" FontWeight="Bold" FontSize="16" />
+                                                        <TextBlock Text="{Binding Author.Name}" FontSize="14" />
+                                                        <TextBlock Text="{Binding YearCreated, StringFormat='Year Created: {0}'}" />
+                                                        <TextBlock Text="{Binding Genre.Name, StringFormat='Genre: {0}'}" />
+                                                        <TextBlock Text="{Binding CountPages, StringFormat='Pages: {0}'}" />
+                                                        <TextBlock Text="{Binding Price, StringFormat='Price: {0:C}'}" />
+                                                </StackPanel>
+                                        </Border>
+                                </DataTemplate>
+                        </ListBox.ItemTemplate>
+                </ListBox>
+                
+                <Grid Grid.Column="1" x:Name="AppendBook" IsVisible="{Binding IsPopupForAppendVisible}">
+                     <Border Width="400" Height="600" CornerRadius="10" Background="#262626" BorderThickness="2" BorderBrush="Black">
+                             <Grid>
+                                     <StackPanel HorizontalAlignment="Center">
+                                             <TextBlock Text="Append New Book" FontWeight="Bold" FontSize="20" Margin="0,10,0,10" HorizontalAlignment="Center" />
+                                             
+                                             <TextBlock HorizontalAlignment="Center"  Text="Title" FontWeight="Bold" Margin="0,10,0,5"/>
+                                             <TextBox Text="{Binding NewBook.Title}" FontSize="14" Padding="10" Margin="10,0,10,0"/>
+                                             
+                                             <TextBlock HorizontalAlignment="Center"  Text="Author" FontWeight="Bold" Margin="0,10,0,5"/>
+                                             <TextBox Text="{Binding NewBook.Author.Name}" FontSize="14" Padding="10" Margin="10,0,10,0"/>
+                                             
+                                             <TextBlock HorizontalAlignment="Center"  Text="Year Created" FontWeight="Bold" Margin="0,10,0,5"/>
+                                             <TextBox Text="{Binding NewBook.YearCreated}" FontSize="14" Padding="10" Margin="10,0,10,0"/>
+                                             
+                                             <TextBlock HorizontalAlignment="Center"  Text="Genre" FontWeight="Bold" Margin="0,10,0,5"/>
+                                             <TextBox Text="{Binding NewBook.Genre.Name}" FontSize="14" Padding="10" Margin="10,0,10,0"/>
+                                             
+                                             <TextBlock HorizontalAlignment="Center"  Text="Pages" FontWeight="Bold" Margin="0,10,0,5"/>
+                                             <TextBox Text="{Binding NewBook.CountPages}" FontSize="14" Padding="10" Margin="10,0,10,0"/>
+                                             
+                                             <TextBlock HorizontalAlignment="Center"  Text="Price" FontWeight="Bold" Margin="0,10,0,5"/>
+                                             <TextBox Text="{Binding NewBook.Price}" FontSize="14" Padding="10" Margin="10,0,10,0"/>
+                                             
+                                            <StackPanel Orientation="Horizontal">
+                                                    <Button VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Margin="5,40,5,10" Content="Append book" Command="{Binding AppendBook}"/>
+                                                    <Button VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Margin="5,40,5,10" Content="Close" Command="{Binding ClosePopup }"/>
+                                            </StackPanel>
+                                     </StackPanel>
+                             </Grid>
+                     </Border>   
+                </Grid>
+                
+                 <Grid Grid.Column="1" x:Name="UpdateBook" IsVisible="{Binding IsPopupForUpdateVisible}">
+                     <Border Width="400" Height="600" CornerRadius="10" Background="#262626" BorderThickness="2" BorderBrush="Black">
+                             <Grid>
+                                     <StackPanel HorizontalAlignment="Center">
+                                             <TextBlock Text="Update New Book" FontWeight="Bold" FontSize="20" Margin="0,10,0,10" HorizontalAlignment="Center" />
+                                             
+                                             <TextBlock HorizontalAlignment="Center"  Text="Title" FontWeight="Bold" Margin="0,10,0,5"/>
+                                             <TextBox Text="{Binding NewBook.Title}" FontSize="14" Padding="10" Margin="10,0,10,0"/>
+                                             
+                                             <TextBlock HorizontalAlignment="Center"  Text="Author" FontWeight="Bold" Margin="0,10,0,5"/>
+                                             <TextBox Text="{Binding NewBook.Author.Name}" FontSize="14" Padding="10" Margin="10,0,10,0"/>
+                                             
+                                             <TextBlock HorizontalAlignment="Center"  Text="Year Created" FontWeight="Bold" Margin="0,10,0,5"/>
+                                             <TextBox Text="{Binding NewBook.YearCreated}" FontSize="14" Padding="10" Margin="10,0,10,0"/>
+                                             
+                                             <TextBlock HorizontalAlignment="Center"  Text="Genre" FontWeight="Bold" Margin="0,10,0,5"/>
+                                             <TextBox Text="{Binding NewBook.Genre.Name}" FontSize="14" Padding="10" Margin="10,0,10,0"/>
+                                             
+                                             <TextBlock HorizontalAlignment="Center"  Text="Pages" FontWeight="Bold" Margin="0,10,0,5"/>
+                                             <TextBox Text="{Binding NewBook.CountPages}" FontSize="14" Padding="10" Margin="10,0,10,0"/>
+                                             
+                                             <TextBlock HorizontalAlignment="Center"  Text="Price" FontWeight="Bold" Margin="0,10,0,5"/>
+                                             <TextBox Text="{Binding NewBook.Price}" FontSize="14" Padding="10" Margin="10,0,10,0"/>
+                                             
+                                            <StackPanel Orientation="Horizontal">
+                                                    <Button VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Margin="5,40,5,10" Content="Update data book" Command="{Binding UpdateBook}"/>
+                                                    <Button VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Margin="5,40,5,10" Content="Close" Command="{Binding ClosePopup }"/>
+                                            </StackPanel>
+                                     </StackPanel>
+                             </Grid>
+                     </Border>   
+                </Grid>
+        </Grid>
+</Window>
+
