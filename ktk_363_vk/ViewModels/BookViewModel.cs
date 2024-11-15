@@ -129,6 +129,7 @@ public class BookViewModel: INotifyPropertyChanged
             if (success)
             {
                 Console.WriteLine( "Книга успешно обновлена!");
+                ClosePopup();
             }
             else
             {
