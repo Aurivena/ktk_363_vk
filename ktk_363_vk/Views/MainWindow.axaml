@@ -47,7 +47,7 @@
                      <Border Width="400" Height="600" CornerRadius="10" Background="#262626" BorderThickness="2" BorderBrush="Black">
                              <Grid>
                                      <StackPanel HorizontalAlignment="Center">
-                                             <TextBlock Text="Append New Book" FontWeight="Bold" FontSize="20" Margin="0,10,0,10" HorizontalAlignment="Center" />
+                                             <TextBlock Text="Append new book" FontWeight="Bold" FontSize="20" Margin="0,10,0,10" HorizontalAlignment="Center" />
                                              
                                              <TextBlock HorizontalAlignment="Center"  Text="Title" FontWeight="Bold" Margin="0,10,0,5"/>
                                              <TextBox Text="{Binding NewBook.Title}" FontSize="14" Padding="10" Margin="10,0,10,0"/>
@@ -80,7 +80,7 @@
                      <Border Width="400" Height="600" CornerRadius="10" Background="#262626" BorderThickness="2" BorderBrush="Black">
                              <Grid>
                                      <StackPanel HorizontalAlignment="Center">
-                                             <TextBlock Text="Update New Book" FontWeight="Bold" FontSize="20" Margin="0,10,0,10" HorizontalAlignment="Center" />
+                                             <TextBlock Text="Update data book" FontWeight="Bold" FontSize="20" Margin="0,10,0,10" HorizontalAlignment="Center" />
                                              
                                              <TextBlock HorizontalAlignment="Center"  Text="Title" FontWeight="Bold" Margin="0,10,0,5"/>
                                              <TextBox Text="{Binding NewBook.Title}" FontSize="14" Padding="10" Margin="10,0,10,0"/>
