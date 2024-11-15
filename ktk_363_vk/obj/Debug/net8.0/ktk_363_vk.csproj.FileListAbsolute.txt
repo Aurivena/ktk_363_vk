@@ -66,3 +66,4 @@
 /home/akeceqm/RiderProjects/ktk_363_vk/ktk_363_vk/obj/Debug/net8.0/ktk_363_vk.csproj.CopyComplete
 /home/akeceqm/RiderProjects/ktk_363_vk/ktk_363_vk/obj/Debug/net8.0/ktk_363_vk.genruntimeconfig.cache
 /home/akeceqm/RiderProjects/ktk_363_vk/ktk_363_vk/obj/Debug/net8.0/ref/ktk_363_vk.dll
+/home/akeceqm/RiderProjects/ktk_363_vk/ktk_363_vk/obj/Debug/net8.0/ktk_363_vk.sourcelink.json
